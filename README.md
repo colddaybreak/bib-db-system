@@ -1,7 +1,7 @@
 # Bibliographic Database System (BibDB)
 
 **CPT402 Software Architectures – Coursework 3**  
-**Group TXR**  
+**Group 5**  
 *Spring Boot + Bootstrap | MVC Distributed Architecture*
 
 ---
