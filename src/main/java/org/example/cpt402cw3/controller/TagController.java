@@ -5,6 +5,7 @@ import org.example.cpt402cw3.common.ApiResponse;
 import org.example.cpt402cw3.DTO.TagDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class TagController {
 
     @PostMapping
     @Operation(summary = "Create tag")
-    public ApiResponse<TagDTO> create(@RequestBody TagDTO dto) {
+    public ApiResponse<TagDTO> create(@Valid @RequestBody TagDTO dto) {
         dto.setId(1L);
         return ApiResponse.success(dto);
     }
@@ -29,7 +30,7 @@ public class TagController {
 
     @PutMapping("/{id}")
     @Operation(summary = "Update tag")
-    public ApiResponse<TagDTO> update(@PathVariable Long id, @RequestBody TagDTO dto) {
+    public ApiResponse<TagDTO> update(@PathVariable Long id, @Valid @RequestBody TagDTO dto) {
         dto.setId(id);
         return ApiResponse.success(dto);
     }
