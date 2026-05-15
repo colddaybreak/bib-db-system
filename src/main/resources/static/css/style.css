@@ -1,0 +1,131 @@
+body {
+  background: linear-gradient(180deg, #f8f9fa 0%, #eef3f8 100%);
+  min-height: 100vh;
+}
+
+.page-shell {
+  padding: 2rem 0 3rem;
+}
+
+.auth-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 460px;
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
+}
+
+.hero-card,
+.content-card {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card {
+  background: linear-gradient(135deg, #0d6efd 0%, #4dabf7 100%);
+  color: #fff;
+}
+
+.publication-card {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.publication-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.12);
+}
+
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.875rem;
+  background: #e9f2ff;
+  color: #0d6efd;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 0;
+}
+
+.tag-chip.is-active {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.favorite-button {
+  border: 0;
+  background: transparent;
+  color: #6c757d;
+  padding: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.favorite-button.is-active {
+  color: #f59f00;
+}
+
+.meta-line {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #6c757d;
+}
+
+.detail-label {
+  color: #495057;
+  font-weight: 600;
+  min-width: 110px;
+}
+
+.detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #495057;
+  margin-bottom: 1rem;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.page-title {
+  font-weight: 700;
+}
+
+.list-summary {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
+
+.card-title a {
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  text-decoration: underline;
+}

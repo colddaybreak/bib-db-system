@@ -1,0 +1,12 @@
+package com.grouptxr.bibdb;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class BibDbApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(BibDbApplication.class, args);
+    }
+}
