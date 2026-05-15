@@ -1,11 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bib DB System</title>
-    <meta http-equiv="refresh" content="0;url=/swagger-ui/index.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | BibConnect</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-<p>Redirecting to <a href="/swagger-ui/index.html">Swagger UI</a>…</p>
+  <div id="app-navbar"></div>
+
+  <main class="page-shell">
+    <div class="container">
+      <section class="card hero-card mb-4">
+        <div class="card-body p-4 p-lg-5">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-7">
+              <h1 class="display-6 fw-bold mb-3">Explore academic publications in one place</h1>
+              <p class="mb-0 opacity-75">Search by keyword, filter by tag, view details, and keep your personal collection organized.</p>
+            </div>
+            <div class="col-lg-5">
+              <form id="searchForm" class="bg-white rounded-4 p-3">
+                <label for="searchInput" class="form-label text-dark fw-semibold">Search publications</label>
+                <div class="input-group">
+                  <input type="search" class="form-control" id="searchInput" placeholder="Try title, author, venue, or keyword">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="alertBox" class="mb-3"></div>
+
+      <section class="card content-card mb-4">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div>
+              <h2 class="h5 mb-1">Browse by tag</h2>
+              <p class="list-summary mb-0">Use one-click filters to narrow the result set.</p>
+            </div>
+            <a class="btn btn-primary btn-sm" href="edit.html">Add new publication</a>
+          </div>
+          <div id="tagFilters"></div>
+        </div>
+      </section>
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+        <h2 class="h4 mb-0">Publication list</h2>
+        <p id="listSummary" class="list-summary mb-0"></p>
+      </div>
+
+      <section id="publicationList" class="row row-cols-1 row-cols-lg-2 g-4"></section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.7.7/dist/axios.min.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html>
