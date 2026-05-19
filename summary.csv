@@ -1,0 +1,5 @@
+Label,# Samples,Average,Min,Max,Std. Dev.,Error %,Throughput,Received KB/sec,Sent KB/sec,Avg. Bytes
+Search Publications,500,12,6,73,8.45,0.000%,102.33320,518.96,15.19,5193.0
+Get Publication Detail,500,3,1,27,2.78,0.000%,103.90690,76.31,13.80,752.0
+Get Tags,500,3,1,28,2.37,0.000%,104.03662,81.48,12.60,802.0
+TOTAL,1500,6,1,73,6.75,0.000%,306.68575,673.57,41.13,2249.0

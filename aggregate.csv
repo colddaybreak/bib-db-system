@@ -1,0 +1,5 @@
+Label,# Samples,Average,Median,90% Line,95% Line,99% Line,Min,Max,Error %,Throughput,Received KB/sec,Sent KB/sec
+Search Publications,500,12,9,19,27,48,6,73,0.000%,102.33320,518.96,15.19
+Get Publication Detail,500,3,3,6,8,19,1,27,0.000%,103.90690,76.31,13.80
+Get Tags,500,3,3,5,7,11,1,28,0.000%,104.03662,81.48,12.60
+TOTAL,1500,6,4,13,17,33,1,73,0.000%,306.68575,673.57,41.13
