@@ -84,9 +84,15 @@
     var id = getId(publication);
     var activeFavorite = isFavorite(publication);
     var showFavorite = !options || options.showFavorite !== false;
+    var showDelete = !options || options.showDelete !== false;
     var favoriteButton = showFavorite ? (
       '<button type="button" class="favorite-button ' + (activeFavorite ? "is-active" : "") + ' js-favorite-toggle" data-id="' + escapeHtml(id) + '" aria-label="Toggle favorite">' +
       '<i class="bi ' + (activeFavorite ? "bi-star-fill" : "bi-star") + '"></i>' +
+      "</button>"
+    ) : "";
+    var deleteButton = showDelete ? (
+      '<button type="button" class="btn btn-outline-danger btn-sm js-publication-delete" data-id="' + escapeHtml(id) + '">' +
+      '<i class="bi bi-trash me-1"></i>Delete' +
       "</button>"
     ) : "";
 
@@ -104,6 +110,7 @@
       '      <div class="d-flex gap-2 flex-wrap">' +
       '        <a class="btn btn-outline-primary btn-sm" href="detail.html?id=' + encodeURIComponent(id) + '">View details</a>' +
       '        <a class="btn btn-outline-secondary btn-sm" href="edit.html?id=' + encodeURIComponent(id) + '">Edit</a>' +
+               deleteButton +
       "      </div>" +
       "    </div>" +
       "  </div>" +
