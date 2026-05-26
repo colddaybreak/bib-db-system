@@ -30,9 +30,9 @@ The system is built following the **Model–View–Controller (MVC)** design pat
 
 | Layer     | Technology                          |
 |-----------|-------------------------------------|
-| Backend   | Spring Boot 2.7, Spring Data JPA, Spring Security, JWT |
+| Backend   | Spring Boot 3.5, Spring Data JPA, Spring Security, JWT |
 | Frontend  | HTML5, Bootstrap 5, Axios (vanilla JS) |
-| Database  | H2 (in‑memory, dev/test), MySQL 8 (production) |
+| Database  | MySQL  (production) |
 | API Doc   | Swagger (SpringDoc OpenAPI)         |
 | Build     | Maven                               |
 | Testing   | JMeter, JUnit, Postman              |
