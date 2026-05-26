@@ -12,10 +12,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   listContainer.addEventListener("click", async function (event) {
     var favoriteButton = event.target.closest(".js-favorite-toggle");
+    var deleteButton = event.target.closest(".js-publication-delete");
     var tagLink = event.target.closest(".js-tag-link");
 
     if (tagLink) {
       window.location.href = "index.html?tag=" + encodeURIComponent(tagLink.dataset.tag || "");
+      return;
+    }
+
+    if (deleteButton) {
+      await deletePublication(deleteButton.dataset.id);
       return;
     }
 
@@ -71,6 +77,31 @@ document.addEventListener("DOMContentLoaded", function () {
       listContainer.innerHTML = items.map(function (item) {
         return window.AppLayout.publicationCard(item);
       }).join("");
+    } catch (error) {
+      window.AppLayout.showAlert(alertBox, "danger", window.AppApi.getErrorMessage(error));
+    }
+  }
+
+  async function deletePublication(id) {
+    if (!id || !window.confirm("Delete this publication? This action cannot be undone.")) {
+      return;
+    }
+
+    try {
+      var endpoint = window.AppApi.fillPath(window.AppApi.endpoints.publicationDetail, { id: id });
+      await window.AppApi.delete(endpoint);
+      items = items.filter(function (item) {
+        return String(window.AppLayout.getId(item)) !== String(id);
+      });
+      summaryText.textContent = items.length + " saved publication(s)";
+      if (!items.length) {
+        window.AppLayout.showEmpty(listContainer, "Your collection is empty right now.");
+        return;
+      }
+      listContainer.innerHTML = items.map(function (item) {
+        return window.AppLayout.publicationCard(item);
+      }).join("");
+      window.AppLayout.showAlert(alertBox, "success", "Publication deleted successfully.");
     } catch (error) {
       window.AppLayout.showAlert(alertBox, "danger", window.AppApi.getErrorMessage(error));
     }
